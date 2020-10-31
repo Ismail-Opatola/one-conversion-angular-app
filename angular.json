@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "oneConversion"
+    }
+  },
+  "defaultProject": "oneConversion",
+  "cli": {
+    "analytics": false
+  }
 }
