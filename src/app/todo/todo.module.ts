@@ -8,6 +8,7 @@ import { CompletedTasksComponent } from './completed-tasks/completed-tasks.compo
   declarations: [CompletedTasksComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CompletedTasksComponent],
 })
 export class TodoModule { }
