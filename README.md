@@ -200,3 +200,11 @@ syntax is `[property]="'expression'"`
 a technique that allows the user to bind attributes of elements from component to view. data flow only in one-way. It can be used for all attributes like innerHTML, src etc
 
 syntax is `[attr.attribute_name]="'expression'"`
+
+## Event binding
+
+a technique that allow the user to bind events from view/template to component. data flow is ony one-way.
+
+can be used for all available events
+
+syntax `<button (event_name)="func()">Click</button>`

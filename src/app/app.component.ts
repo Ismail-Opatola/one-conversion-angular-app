@@ -17,4 +17,8 @@ export class AppComponent {
   colorLightBlue = 'bg-color-blue--light';
 
   hrefVal = 'http://google.com';
+
+  showAlert(id) {
+    alert(`Hello world! Event binding ${id ? id : ''}`);
+  }
 }
