@@ -189,8 +189,14 @@ data can be integers, strings, objects, arrays and much more
 
 syntax for binding interpolation is `{{ variable_name }}`
 
-## Property Binding
+## Property Binding & Style Binding
 
 a technique that allows the user to bind properties of elements from component to view. data flow only in one-way. It can be used for all properties like innerHTML, src etc
 
-syntax is `[property="'expression'"`
+syntax is `[property]="'expression'"`
+
+## Attribute binding
+
+a technique that allows the user to bind attributes of elements from component to view. data flow only in one-way. It can be used for all attributes like innerHTML, src etc
+
+syntax is `[attr.attribute_name]="'expression'"`

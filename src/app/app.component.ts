@@ -15,4 +15,6 @@ export class AppComponent {
   colorVal = 'lightpink';
   colorLightPink = 'bg-color-pink--light';
   colorLightBlue = 'bg-color-blue--light';
+
+  hrefVal = 'http://google.com';
 }
