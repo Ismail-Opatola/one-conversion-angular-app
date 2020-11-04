@@ -191,3 +191,6 @@ syntax for binding interpolation is `{{ variable_name }}`
 
 ## Property Binding
 
+a technique that allows the user to bind properties of elements from component to view. data flow only in one-way. It can be used for all properties like innerHTML, src etc
+
+syntax is `[property="'expression'"`

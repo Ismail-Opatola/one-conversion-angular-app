@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'oneConversion';
 
-  subTitle= `Learning Interpolation`;
+  subTitle = `Learning Interpolation`;
   epNum = 18;
   user = {uid: 97608, name: 'kamal'};
+
+  colorVal = 'lightpink';
+  colorLightPink = 'bg-color-pink--light';
+  colorLightBlue = 'bg-color-blue--light';
 }

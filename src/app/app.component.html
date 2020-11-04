@@ -12,4 +12,12 @@
   <p>UserID: {{ user.uid }}</p>
 </div>
 
+<div>
+  <p [ngStyle]="{ 'background-color': colorVal }">This is an example of property binding</p>
+  <p [innerHtml]="subTitle" [ngClass]="colorLightBlue"></p>
+  <div>
+    <input [type]="'text'" [placeholder]="'enter text here'">
+  </div>
+</div>
+
 <router-outlet></router-outlet>
