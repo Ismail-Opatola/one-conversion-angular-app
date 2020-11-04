@@ -180,3 +180,14 @@ Tree hierachy starts with `AppComponent`
 ### Two-way data binding
 
 Data flows from view to component and back to component from the view
+
+## Interpolation
+
+a technique that allows the user to bind data from component to view template. The data flow is only one-way i.e from component to view.
+
+data can be integers, strings, objects, arrays and much more
+
+syntax for binding interpolation is `{{ variable_name }}`
+
+## Property Binding
+

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'oneConversion';
+
+  subTitle= `Learning Interpolation`;
+  epNum = 18;
+  user = {uid: 97608, name: 'kamal'};
 }
