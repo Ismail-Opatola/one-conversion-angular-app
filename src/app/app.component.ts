@@ -18,7 +18,11 @@ export class AppComponent {
 
   hrefVal = 'http://google.com';
 
-  showAlert(id) {
-    alert(`Hello world! Event binding ${id ? id : ''}`);
-  }
+  firstname = '';
+
+  logger = (data: any) => console.log(data);
+
+  showAlert = (id: number) => this.logger(`Hello world! Event binding ${id ? id : ''}`);
+
+  logData = () => this.logger(this.firstname);
 }

@@ -208,3 +208,11 @@ a technique that allow the user to bind events from view/template to component. 
 can be used for all available events
 
 syntax `<button (event_name)="func()">Click</button>`
+
+## Two-way data binding (explained)
+
+a technique that allow the user to bind events of elements from view/template to component and vise versa. data flow both ways.
+
+its a combination of property binding and event binding
+
+syntax `<input [(ngModel)]='data' />`
