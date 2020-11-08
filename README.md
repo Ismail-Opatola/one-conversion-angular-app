@@ -339,3 +339,25 @@ we can configure routes to redirect route for varius paths
 - component
 - redirectTo
 - children
+  
+### Parameterized Routes
+
+we need to configure the route and mentain that the value is dynamic
+
+  {path: 'product/:id', component: ComponentName}
+
+  e.g
+  product/10
+  product/10/20
+
+### Query Params in Routes
+
+url param `search?keyword=toys&country=ng`
+
+GET Http method calls
+
+visible to the end users
+
+- make sure NO sensitive info is captured via query params
+- no login, password, no credit card, etc - they should always be post calls
+

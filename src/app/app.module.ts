@@ -13,6 +13,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductIdComponent } from './product-id/product-id.component';
+import { OrderViewComponent } from './order-view/order-view.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductIdComponent } from './product-id/product-id.component';
     ProductsComponent,
     ProductViewComponent,
     ProductEditComponent,
-    ProductIdComponent
+    ProductIdComponent,
+    OrderViewComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
