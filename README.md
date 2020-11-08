@@ -146,10 +146,11 @@ Tree hierachy starts with `AppComponent`
 
 ## Directives
 
-- 3 types of directives
-  - component
-  - structure
-  - attribute
+3 types of directives
+
+- component
+- structure
+- attribute
 
 1. component is a type of directive
    it has its own template
@@ -216,3 +217,125 @@ a technique that allow the user to bind events of elements from view/template to
 its a combination of property binding and event binding
 
 syntax `<input [(ngModel)]='data' />`
+
+## Pipes
+
+Pipes are used to covert/transform data input into a desired format
+
+Pipes are written using the pip operator `|`
+
+It can be applied to any view/template and to any data inputs
+
+### Types of Pipes
+
+- **Built in Pipes**
+  - Lowercase
+  - Uppercase
+  - Currency
+  - Date
+  - json
+- **Parameterized Pipes**
+  - We can pass one or more parameters to pipes
+- **Chaining Pipes**
+  - We can connect multiple pipes to a data input
+- **Custom Pipes**
+  - We can create our own custom pipes for various data formatting
+  - we can generate new custom pipes using CLI
+    - `ng generate pipe highlight`
+  - Pipes needs to be added to the module - CLI does this when we auto generate
+  - we need to import the Pipe and PipeTransform from the @angular/core
+  - Pipes are declared with the decorator @pipe and provide the selector name
+
+## Routing
+
+Routing is a mechanism used by angular to manage the `paths` and `routes` of our app
+
+Routing strategy helps in navigation btw various views in our app
+
+Angular framework comes with `Router` module which has everything we need to design, develop and implement routes and navigation linkd
+
+`Router` is a singleton - which means there is only one instance of the router in an angular app
+
+The Router module is found in the package `@angular/router`
+
+We need to setup Router array - everytime a request is made, the router will search in te list of array and find the most relevant match
+
+**Router has states** - which helps us get important information about the _current state_ and _data related to routes_
+
+We can handle various types of routes in Angular
+
+- Routes for components
+- getting Query Params from routes
+- Getting the URL segments
+- Loading child routes for a module
+- Lazy loading
+- Handling wild card routes
+- Handling default routes
+- Handling 404 route
+
+### Routing Strategy
+
+This is important as it will affect the entire app flow and navigation
+
+- /products
+- /product/10
+- /product/10/details
+- /product?search=param1
+
+Angular provides two types of routing strateg
+
+- _PathLocationStrategy_
+- _HashLocationStrategy_
+
+Angular makes use of _PathLocationStrategy_ strategy by default
+
+With _HashLocationStrategy_ - we will see the # in the URL
+
+- #/products
+- #/product/10
+
+### Base HREF
+
+Every angular app has MANDATORY base href
+
+Angular app is a SPA (Single Page Architecture) which means there will be only one HTML file
+
+The default base href is set to `/` the root folder
+
+The base href is present in `index.html` file for all angular app `<base href="/">`
+
+`ng build` - when deploying it wil always assume you're deploying to the root folder
+
+example: <http://arctuts.com/> - root folder
+
+if you intend to deploy to `/demos` i.e <http://arctuts.com/demos> then set Base href - "/demos"
+
+How do we configure it?
+
+`ng build --base-href="/demos"`
+
+### Routing Module
+
+Routing Module is a placeholder for configuring all routes and navigation in one module
+
+Best practice is to have all routes configured in one place
+
+Easy to mentain and debug
+
+We can generate the app routing module using CLI
+`ng generate module app-routing --flat --module=app`
+
+### Router Outlet
+
+Defines where output should be displayed
+
+It can be specified at app module or individual modules
+
+### Configuring Routes
+
+we can configure routes to redirect route for varius paths
+
+- path
+- component
+- redirectTo
+- children

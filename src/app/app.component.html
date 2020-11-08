@@ -1,6 +1,6 @@
 <h1 class="bg-primary">Welcome to {{title}}</h1>
 
-<app-tasks></app-tasks>
+<!-- <app-tasks></app-tasks>
 
 <h4>List of Completed tasks</h4>
 <app-completed-tasks></app-completed-tasks>
@@ -8,7 +8,7 @@
 <div>
   <p>Title: {{ subTitle }}</p>
   <p>Episode: {{ epNum }}</p>
-  <p>User: {{ user.name }}</p>
+  <p>User: {{ user.firstname }}</p>
   <p>UserID: {{ user.uid }}</p>
 </div>
 
@@ -35,4 +35,43 @@
   <p>FirstName: {{ firstname }}</p>
 </div>
 
-<router-outlet></router-outlet>
+<div>
+  <h4>Using Built-in Pipes</h4>
+  <p>{{ user.firstname | uppercase }}, {{ user.lastname | lowercase }}</p>
+  <p>{{ user.DOB | date:'MMMM dd' }}</p>
+  <p>{{ user.salary | currency:'INR' }}</p>
+  <p>{{ user | json }}</p>
+</div>
+
+<div>
+  <h4>Chainning pipes</h4>
+  <p>{{ user.DOB | date:'MMMM' | uppercase }}</p>
+</div>
+
+<div>
+  <h4>Custom pipes</h4>
+  <ul>
+    <li *ngFor="let user of users">
+      <p [innerHTML]="user.city | highlight:user.city"></p>
+    </li>
+  </ul>
+</div> -->
+
+<div>
+  <ul >
+    <li>
+      <a href="/products">products</a>
+    </li>
+    <li>
+      <a href="/product-view">product view</a>
+    </li>
+    <li>
+      <a href="/product-edit">product edit</a>
+    </li>
+  </ul>
+</div>
+
+<div class="">
+  <router-outlet></router-outlet>
+
+</div>
