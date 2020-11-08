@@ -9,6 +9,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'product-view', pathMatch: 'full'},
   {path: 'learning', component: TasksComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'product-view', component: ProductViewComponent},

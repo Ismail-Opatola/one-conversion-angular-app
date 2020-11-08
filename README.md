@@ -361,3 +361,11 @@ visible to the end users
 - make sure NO sensitive info is captured via query params
 - no login, password, no credit card, etc - they should always be post calls
 
+### Redirecting routes
+
+syntax `{path: '', redirectTo: 'home', pathMatch: 'full},`
+
+The **empty path** indicates that it's the default route of the app
+
+The **empty path** also requires us to mention that `pathMatch` should be `full`
+
