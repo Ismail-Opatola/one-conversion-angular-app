@@ -379,3 +379,30 @@ Wildcard routes are defined in the routes array using `{path: '**'}`
 
 Usually a component named `PageNotFound` is mapped as best practice
 
+### Child Routes
+
+we can configure child routes to create more meaningful url segments
+
+the child routes array will follow syntax and array concept as similar to defining the routes array
+
+syntax for definning the child routes
+
+  {
+    path: 'products',
+    children: [
+      {
+        path: 'product-child'
+        component: ProductViewComponent
+      }
+    ]
+  }
+
+logical grouping
+
+`customers` /customers - parent route
+  `view` /customers/view - child route
+    `info` /customers/view/info - child route to `view`
+    `gallery` /customers/view/gallery
+    `details`
+  `edit`
+  `delete`

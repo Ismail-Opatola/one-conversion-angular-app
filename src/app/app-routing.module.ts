@@ -10,16 +10,37 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'product-view', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent},
-  {path: 'learning', component: TasksComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'product-view', component: ProductViewComponent},
-  {path: 'product-edit', component: ProductEditComponent},
-  {path: 'product/:id', component: ProductIdComponent},
-  {path: 'order/:id', component: OrderViewComponent},
-  {path: 'order/:id/:id2', component: OrderViewComponent},
-  {path: 'search', component: SearchComponent}
+  {path: '', redirectTo: 'products', pathMatch: 'full'},
+  // {path: 'learning', component: TasksComponent},
+  // {path: 'products', component: ProductsComponent},
+  // {path: 'product-view', component: ProductViewComponent},
+  // {path: 'product-edit', component: ProductEditComponent},
+  // {path: 'product/:id', component: ProductIdComponent},
+  // {path: 'order/:id', component: OrderViewComponent},
+  // {path: 'order/:id/:id2', component: OrderViewComponent},
+  // {path: 'search', component: SearchComponent}
+  {
+    path: 'products',
+    children: [
+      {
+        path: '',
+        component: ProductViewComponent
+      },
+      {
+        path: 'view',
+        component: ProductViewComponent
+      },
+      {
+        path: 'edit',
+        component: ProductEditComponent
+      },
+      {
+        path: 'view/:id',
+        component: ProductIdComponent
+      }
+    ]
+  },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
