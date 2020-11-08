@@ -427,3 +427,34 @@ Lazy loading helps keeps initial bundle sizes smaller, which in turn helps decre
 generate module 'orders' -- create orders.routing.module.ts -- initialize in app-routing.module.ts
 
 `ng g m orders --route orders --module app.module`
+
+### Route Guards
+
+Use route guards to prevent users from navigating to parts of an ap without authorization
+
+Route Guards are used to secure the route paths
+
+In most cases, the routes and screen are protected behind a good auth system
+
+The route guard resolves to true or false based on custom logic and functionality
+
+We can generate nay number of guards based on our app requirements
+
+To generate the route guard we can make use of angular cli
+`ng g guard <guard-name>`
+
+Inject the guard in our module under providers
+
+There are various types of route guards available
+
+- _CanActivate_ - checks to see if a user can visit a route
+- _CanActivateChild_ - checks to see if a user can visit a route's children
+- _CanDeactivate_ - checks to see if a user can exit a route
+- _Resolve_ - Performs route data retrival before route activation
+- _CanLoad_ - checks to see if a user can route to a module that lazy loaded
+  
+The route guard resolves to true or false based on custom logic and functionality
+
+    ng g c admin-home
+    ng g guard admin-guard
+

@@ -16,6 +16,7 @@ import { ProductIdComponent } from './product-id/product-id.component';
 import { OrderViewComponent } from './order-view/order-view.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductIdComponent,
     OrderViewComponent,
     SearchComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

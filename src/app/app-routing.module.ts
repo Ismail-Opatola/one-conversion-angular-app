@@ -8,9 +8,16 @@ import { ProductsComponent } from './products/products.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminGuardGuard } from './admin-guard.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'products', pathMatch: 'full'},
+  {
+    path: 'admin',
+    component: AdminHomeComponent,
+    canActivate: [AdminGuardGuard]
+  },
   // {path: 'learning', component: TasksComponent},
   // {path: 'products', component: ProductsComponent},
   // {path: 'product-view', component: ProductViewComponent},
