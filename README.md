@@ -397,7 +397,7 @@ syntax for definning the child routes
     ]
   }
 
-logical grouping
+Logical grouping
 
 `customers` /customers - parent route
   `view` /customers/view - child route
@@ -406,3 +406,24 @@ logical grouping
     `details`
   `edit`
   `delete`
+
+### Lazy Loading
+
+By default,**NgModules** are eagerly loaded, which means that as soon as the app loads, so do all the **NgModules**, whether or not they are immediately necessary. It makes app heavy becuse bundle size increases.
+
+For large apps with lots of routes, consider lazy loading - _a design pattern that laods **NgModules** as needed_. i.e only load modules when they're required.
+
+Lazy loading helps keeps initial bundle sizes smaller, which in turn helps decrese load times.
+
+#### HOW TO USE LAZY LOADING
+
+1. create a feature module
+    - child routes
+2. loadChildren
+    - config in app routing
+
+#### HOW TO IMPLEMENT LAZY LOADING
+
+generate module 'orders' -- create orders.routing.module.ts -- initialize in app-routing.module.ts
+
+`ng g m orders --route orders --module app.module`
