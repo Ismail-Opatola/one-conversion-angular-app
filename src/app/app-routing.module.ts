@@ -7,9 +7,11 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductsComponent } from './products/products.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'product-view', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent},
   {path: 'learning', component: TasksComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'product-view', component: ProductViewComponent},

@@ -369,3 +369,13 @@ The **empty path** indicates that it's the default route of the app
 
 The **empty path** also requires us to mention that `pathMatch` should be `full`
 
+### Wildcard Route
+
+Wildcard intercepts any invalid urls in our app
+
+when no matching routes are found in the routes array, the router does noot know where to go and hence results in console errors
+
+Wildcard routes are defined in the routes array using `{path: '**'}`
+
+Usually a component named `PageNotFound` is mapped as best practice
+
