@@ -458,3 +458,29 @@ The route guard resolves to true or false based on custom logic and functionalit
     ng g c admin-home
     ng g guard admin-guard
 
+## Angular Forms
+
+### Bootstrap
+
+You integrate bootstrap either via CDN or `npm`
+
+`npm i bootstrap jquery popper --save`
+
+import bootstrap and jquery in `angular.json` file
+
+      "architect": {
+        "build": {
+          ...
+          "options": {
+            ...
+            "styles": [
+              ...
+              "node_modules/bootstrap/dist/css/bootstrap.nin.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          }
+
+
