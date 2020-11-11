@@ -464,7 +464,7 @@ The route guard resolves to true or false based on custom logic and functionalit
 
 You integrate bootstrap either via CDN or `npm`
 
-`npm i bootstrap jquery popper --save`
+`npm i bootstrap jquery popper.js --save`
 
 import bootstrap and jquery in `angular.json` file
 
@@ -483,4 +483,58 @@ import bootstrap and jquery in `angular.json` file
             ]
           }
 
+### Forms
 
+Forms are integral and essential building blocks of "almost all apps
+
+Common form examples we can see are:
+
+- Login
+- Forgot
+- Register
+- Checkout
+- Contact
+
+It allows data gathering from users
+
+#### Two Types of Form in Angular
+
+- Template Driven Forms
+- Reactive Forms (also know as Dynamic Forms)
+
+#### Angular framework support fot Forms
+
+- Two-way Data Binding
+- Change Tracking
+- Validation
+- Error Handling
+- Unit Testing
+
+#### Template Driven Forms
+
+- Easy to use
+- Template driven forms are simple and straight forword
+- all the validations. form elements are al in the template file
+- Two-way Data Binding
+- validations are mostly the default HTML5 validations
+- Difficult to Unit Test
+
+##### How to use TDF
+
+we will import `FormsModule` in `app.moudule.ts` to work with Template driven forms
+
+create form in any component e.g `app.component.html`
+
+`ngForm` - form name as template variable using `#` for e.g `#loginForm`
+
+`ngModel` - Every form should have a `name` attribute and `ngModel` attached to it
+
+#### Reactive Forms (also know as Dynamic Forms)
+
+- All the form elements, user interactions and validations are handled in the component class
+- we will make use of Angular's built in `formGroup` and `formControl`
+- we can control better data binding
+- exclusive define Regx patterns of error handling
+- we will need to import `ReactiveFormsModule` in our app module
+- Very flexible and allows users to define, develop complex requirements of forms
+- more logic in the component class and les in HTML markup itself

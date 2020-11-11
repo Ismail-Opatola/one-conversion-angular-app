@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminGuardGuard } from './admin-guard.guard';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'products', pathMatch: 'full'},
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'admin',
     component: AdminHomeComponent,
     canActivate: [AdminGuardGuard]
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
   },
   // {path: 'learning', component: TasksComponent},
   // {path: 'products', component: ProductsComponent},
