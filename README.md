@@ -529,6 +529,31 @@ create form in any component e.g `app.component.html`
 
 `ngModel` - Every form should have a `name` attribute and `ngModel` attached to it
 
+##### Validate TDF
+
+Angular provides common validators like `minLength`, `maxLength`, `required` etc.
+
+Angular maintains _state information_ of the Forms at all times
+
+- ng-touched
+- ng-untouched
+- ng-dirty
+- ng-pristine
+- ng-valid
+- ng-invalid
+
+###### Way to Handle Validations in TDF
+
+- Highlighting the errors
+
+    input.ng-invalid.ng-touched {
+      background-color:red
+    }
+- Disable the submit button
+  - by adding attribute `[disabled]="!formName.valid"`
+- Custom Feild Level Validation - Show/Hide Error Messages
+  - `<span *ngIf="firstname.touched && !firstname.valid">Please enter email</span>`
+
 #### Reactive Forms (also know as Dynamic Forms)
 
 - All the form elements, user interactions and validations are handled in the component class
