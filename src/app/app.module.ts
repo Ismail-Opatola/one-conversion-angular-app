@@ -17,6 +17,7 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SigninComponent } from './signin/signin.component';
     SearchComponent,
     PageNotFoundComponent,
     AdminHomeComponent,
-    SigninComponent
+    SigninComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

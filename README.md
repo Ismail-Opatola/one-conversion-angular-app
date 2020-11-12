@@ -556,10 +556,29 @@ Angular maintains _state information_ of the Forms at all times
 
 #### Reactive Forms (also know as Dynamic Forms)
 
-- All the form elements, user interactions and validations are handled in the component class
+- All the form elements, user interactions and validations are handled in the **component class**
 - we will make use of Angular's built in `formGroup` and `formControl`
 - we can control better data binding
 - exclusive define Regx patterns of error handling
-- we will need to import `ReactiveFormsModule` in our app module
+- we will need to import `ReactiveFormsModule` in our `app.module.ts` file
 - Very flexible and allows users to define, develop complex requirements of forms
 - more logic in the component class and les in HTML markup itself
+
+Angular maintains _state information_ of the Forms at all times
+
+- ng-touched
+- ng-untouched
+- ng-dirty
+- ng-pristine
+- ng-valid
+- ng-invalid
+
+##### How to use Reactive Forms
+
+- import `ReactiveFormModule from @angular/forms` in `app.module.ts`
+- create the form in `app.component.html`
+  - `FormGroup` - form directive
+  - `FormControlName` - required attribute for every form field
+- import required modules in component class
+  - `import { Component, OnInit } from '@angular/core'`
+  - `import { FormGroup, FormBuilder, FormControl, NgForm, Validators } from '@angular/forms'`

@@ -1,77 +1,94 @@
-<h1 class="bg-primary">Welcome to {{title}}</h1>
+<header class="sticky-top text-center bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Welcome to {{title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products/" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Products
+          </a>
+          <div class="dropdown-menu text-center border bg-transparent" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/products/view">View</a>
+            <a class="dropdown-item" href="/products/edit">Edit</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/checkout">Checkout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main class="container mb-auto py-3 bg-light">
+  <!-- <app-tasks></app-tasks>
+    
+  <h4>List of Completed tasks</h4>
+  <app-completed-tasks></app-completed-tasks>
 
-<!-- <app-tasks></app-tasks>
-
-<h4>List of Completed tasks</h4>
-<app-completed-tasks></app-completed-tasks>
-
-<div>
-  <p>Title: {{ subTitle }}</p>
-  <p>Episode: {{ epNum }}</p>
-  <p>User: {{ user.firstname }}</p>
-  <p>UserID: {{ user.uid }}</p>
-</div>
-
-<div>
-  <p [ngStyle]="{ 'background-color': colorVal }">This is an example of property binding</p>
-  <p [innerHtml]="subTitle" [ngClass]="colorLightBlue"></p>
   <div>
-    <input [type]="'text'" [placeholder]="'enter text here'">
+    <p>Title: {{ subTitle }}</p>
+    <p>Episode: {{ epNum }}</p>
+    <p>User: {{ user.firstname }}</p>
+    <p>UserID: {{ user.uid }}</p>
   </div>
-</div>
 
-<div>
-  <a [attr.href]="hrefVal" [attr.target]="'_blank'">google</a>
-</div>
+  <div>
+    <p [ngStyle]="{ 'background-color': colorVal }">This is an example of property binding</p>
+    <p [innerHtml]="subTitle" [ngClass]="colorLightBlue"></p>
+    <div>
+      <input [type]="'text'" [placeholder]="'enter text here'">
+    </div>
+  </div>
 
-<div>
-  <button (click)="showAlert(10)">Click Me</button>
-</div>
+  <div>
+    <a [attr.href]="hrefVal" [attr.target]="'_blank'">google</a>
+  </div>
 
-<div>
-  <h4>Two-way data binding</h4>
-  <input type="text" [(ngModel)]="firstname" />
-  <button (click)="logData()">Log Data</button>
-  <p>FirstName: {{ firstname }}</p>
-</div>
+  <div>
+    <button (click)="showAlert(10)">Click Me</button>
+  </div>
 
-<div>
-  <h4>Using Built-in Pipes</h4>
-  <p>{{ user.firstname | uppercase }}, {{ user.lastname | lowercase }}</p>
-  <p>{{ user.DOB | date:'MMMM dd' }}</p>
-  <p>{{ user.salary | currency:'INR' }}</p>
-  <p>{{ user | json }}</p>
-</div>
+  <div>
+    <h4>Two-way data binding</h4>
+    <input type="text" [(ngModel)]="firstname" />
+    <button (click)="logData()">Log Data</button>
+    <p>FirstName: {{ firstname }}</p>
+  </div>
 
-<div>
-  <h4>Chainning pipes</h4>
-  <p>{{ user.DOB | date:'MMMM' | uppercase }}</p>
-</div>
+  <div>
+    <h4>Using Built-in Pipes</h4>
+    <p>{{ user.firstname | uppercase }}, {{ user.lastname | lowercase }}</p>
+    <p>{{ user.DOB | date:'MMMM dd' }}</p>
+    <p>{{ user.salary | currency:'INR' }}</p>
+    <p>{{ user | json }}</p>
+  </div>
 
-<div>
-  <h4>Custom pipes</h4>
-  <ul>
-    <li *ngFor="let user of users">
-      <p [innerHTML]="user.city | highlight:user.city"></p>
-    </li>
-  </ul>
-</div> -->
+  <div>
+    <h4>Chainning pipes</h4>
+    <p>{{ user.DOB | date:'MMMM' | uppercase }}</p>
+  </div>
 
-<div>
-  <ul >
-    <li>
-      <a href="/products">products</a>
-    </li>
-    <li>
-      <a href="/product-view">product view</a>
-    </li>
-    <li>
-      <a href="/product-edit">product edit</a>
-    </li>
-  </ul>
-</div>
+  <div>
+    <h4>Custom pipes</h4>
+    <ul>
+      <li *ngFor="let user of users">
+        <p [innerHTML]="user.city | highlight:user.city"></p>
+      </li>
+    </ul>
+  </div> -->
 
-<div class="">
   <router-outlet></router-outlet>
-
-</div>
+</main>
+<footer class="border-top">
+  <p class="text-center mx-auto py-3">
+    All Rights Reserved @2020
+  </p>
+</footer>
