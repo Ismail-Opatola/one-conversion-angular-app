@@ -7,20 +7,33 @@
         <label for="exampleInputEmail1">Email</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
           name="emailAddress" required formControlName="emailAddress">
-        <!-- <small id="emailHelp" class="form-text text-muted" *ngIf="emailAddress.touched && !emailAddress.valid">
-          Please enter a valid email.
-        </small> -->
+        <small id="emailHelp" class="form-text text-muted"
+          *ngIf="checkoutForm.get('emailAddress').touched && checkoutForm.get('emailAddress').hasError('required')">
+          Email is required.
+        </small>
+        <small id="emailHelp" class="form-text text-muted"
+          *ngIf="checkoutForm.get('emailAddress').touched && checkoutForm.get('emailAddress').hasError('email')">
+          Enter a valid email. e.g foo@xyz.com
+        </small>
       </div>
       <div class="form-group">
         <label for="exampleInputQuantity1">Quantity</label>
         <input type="text" class="form-control" id="exampleInputQuantity1" name="quantity" formControlName="quantity"
           required>
+        <small id="quantityHelp" class="form-text text-muted"
+          *ngIf="checkoutForm.get('quantity').touched && checkoutForm.get('quantity').hasError('required')">
+          Quantity is required.
+        </small>
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tos" formControlName="tos" required>
         <label class="form-check-label" for="exampleCheck1">Agree to TOS</label>
+        <small id="tosHelp" class="form-text text-muted"
+          *ngIf="checkoutForm.get('tos').touched && checkoutForm.get('tos').hasError('required')">
+          TOS opt-in is required.
+        </small>
       </div>
-      <button type="submit" class="btn btn-primary w-100">Checkout</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="!checkoutForm.valid">Checkout</button>
     </form>
   </div>
 </section>

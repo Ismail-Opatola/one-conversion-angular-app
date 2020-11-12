@@ -22,9 +22,24 @@ export class CheckoutComponent implements OnInit {
 
   constructor(formBuilder: FormBuilder) {
     this.checkoutForm = formBuilder.group({
-      emailAddress: new FormControl(),
-      quantity: new FormControl(),
-      tos: new FormControl()
+      emailAddress: [
+        null,
+        [
+          Validators.required,
+          Validators.email
+        ]
+      ],
+      quantity: [
+        null,
+        Validators.required
+      ],
+      tos: [
+        null,
+        Validators.requiredTrue
+      ]
+      // emailAddress: new FormControl(),
+      // quantity: new FormControl(),
+      // tos: new FormControl()
     });
   }
 

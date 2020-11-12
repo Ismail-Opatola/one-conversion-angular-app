@@ -582,3 +582,11 @@ Angular maintains _state information_ of the Forms at all times
 - import required modules in component class
   - `import { Component, OnInit } from '@angular/core'`
   - `import { FormGroup, FormBuilder, FormControl, NgForm, Validators } from '@angular/forms'`
+
+##### Reactive Forms Validations
+
+Angular provides common validators like `minLength`, `maxLength`, `required` etc.
+
+- Highlight Errors
+- Disable the Submit Button
+- Custom field validation
