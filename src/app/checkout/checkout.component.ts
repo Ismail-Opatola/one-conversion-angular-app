@@ -55,13 +55,25 @@ export class CheckoutComponent implements OnInit {
       console.log(data);
     });
 
+    // listen for status changes on form control
+    // @return string - INVALID | VALID
+    // this.checkoutForm.get('emailAddress').statusChanges.subscribe(fieldStatus => {
+    //   console.log(fieldStatus);
+    // });
+
+    // listen for status changes on the entire form control
+    // @return string - INVALID | VALID
+    this.checkoutForm.statusChanges.subscribe(formStatus => {
+      console.log(formStatus);
+    });
+
     // override checkForm form fields
     // this.checkoutForm.setValue({
       //   emailAddress: 'test@xyz.com',
       //   quantity: 10,
       //   tos: true
       // });
- 
+
     // update checkForm form fields
     this.checkoutForm.patchValue({
       quantity: 10,

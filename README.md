@@ -660,3 +660,30 @@ we need to Subscribe to the `Observable` to read the value
       console.log(data)
     })
 
+##### Form Group: Status Changes
+
+`statusChanges`is yet another important property of `FormControl`, `FormGroup` and `FormArray`
+
+`statusChanges` returns an Observable
+
+we need to Subscribe to the `Observable` to read the value
+
+`statusChanges` is a property in `AbstractControl`
+
+`statusChanges` will emit an event every time there is any change in the validation status of the control changes
+
+1. For Form Control
+   - When subscribed to the observable - we will get the validation status control
+   - syntax
+
+    this.formName.get('email').statusChanges.subcribe(data => {
+      Console.log(data)
+    })
+
+2. For Entire Form
+   - When subcribed to the observab;e - we will get the validation status of the entire form
+   - syntax
+
+    this.formName.statusChanges.subscribe(data => {
+      console.log(data)
+    })
