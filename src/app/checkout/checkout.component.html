@@ -33,7 +33,10 @@
           TOS opt-in is required.
         </small>
       </div>
-      <button type="submit" class="btn btn-primary w-100" [disabled]="!checkoutForm.valid">Checkout</button>
+      <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-secondary" (click)="resetForm()">Clear</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Checkout</button>
+      </div>
     </form>
   </div>
 </section>

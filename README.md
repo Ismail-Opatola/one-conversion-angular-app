@@ -549,6 +549,7 @@ Angular maintains _state information_ of the Forms at all times
     input.ng-invalid.ng-touched {
       background-color:red
     }
+
 - Disable the submit button
   - by adding attribute `[disabled]="!formName.valid"`
 - Custom Feild Level Validation - Show/Hide Error Messages
@@ -590,3 +591,41 @@ Angular provides common validators like `minLength`, `maxLength`, `required` etc
 - Highlight Errors
 - Disable the Submit Button
 - Custom field validation
+
+##### Form Group: Get Values
+
+read the value of the entire form
+
+`This.formName.value`
+
+read the value of an individualk form control
+
+`This.formName.get("feildname).value`
+
+##### Form Group: Set Values
+
+- setting values in the Form - `setValue`
+  - We can SET the values of the entire form using setValue()
+    - must set values for every fields of the form
+    - must not omit any field in the form
+
+    this.registerForm.setValue({
+      fname: 'ARC',
+      lname: 'Tuts',
+      email. 'arc@xyz.com'
+    })
+
+- setting individual form field contros - `patchValue`
+  
+    this.registerForm.patchValue({
+      fname: 'ARC',
+      email: 'arc@xyz'
+    })
+
+##### Form Group: Reset Form
+
+Reset forms helps avoid duplicate values getting added to the form
+
+We can reset the entire form using `reset()` mathod
+
+    this.registerForm.reset()

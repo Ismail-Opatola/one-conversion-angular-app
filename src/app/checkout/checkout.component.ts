@@ -44,9 +44,23 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.checkoutForm.setValue({
+    //   emailAddress: 'test@xyz.com',
+    //   quantity: 10,
+    //   tos: true
+    // });
+    this.checkoutForm.patchValue({
+      quantity: 10,
+      tos: true
+    });
   }
 
   postData = () => {
     console.log(this.checkoutForm.value);
+    this.resetForm();
+  }
+
+  resetForm = () => {
+    this.checkoutForm.reset();
   }
 }
