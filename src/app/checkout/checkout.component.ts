@@ -44,11 +44,25 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.checkoutForm.setValue({
-    //   emailAddress: 'test@xyz.com',
-    //   quantity: 10,
-    //   tos: true
+
+    // listen/read email field value onChange
+    // this.checkoutForm.get('emailAddress').valueChanges.subscribe(data => {
+    //   console.log(data);
     // });
+
+    // listen/read value changes on entire form
+    this.checkoutForm.valueChanges.subscribe(data => {
+      console.log(data);
+    });
+
+    // override checkForm form fields
+    // this.checkoutForm.setValue({
+      //   emailAddress: 'test@xyz.com',
+      //   quantity: 10,
+      //   tos: true
+      // });
+ 
+    // update checkForm form fields
     this.checkoutForm.patchValue({
       quantity: 10,
       tos: true

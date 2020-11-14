@@ -629,3 +629,34 @@ Reset forms helps avoid duplicate values getting added to the form
 We can reset the entire form using `reset()` mathod
 
     this.registerForm.reset()
+
+##### Form Group: Track Value Changes
+
+`valueChanges`is yet another important property of `FormControl`, `FormGroup` and `FormArray`
+
+`valueChanges` returns an Observable
+
+we need to Subscribe to the `Observable` to read the value
+
+`valueChanges` is a property in `AbstractControl`
+
+`valueChanges` will emit an event every time there is any chabge in the values of the control changes
+
+###### Implementation
+
+1. For Form Control
+   - When subscribed to the observable - we will get the latest changed value
+   - syntax
+
+    this.formName.get('email').valueChanges.subcribe(data => {
+      Console.log(data)
+    })
+
+2. For Entire Form
+   - When subcribed to the observab;e - we will get the entire form but the values will be only for changed form control
+   - syntax
+
+    this.formName.valueChanges.subscribe(data => {
+      console.log(data)
+    })
+
