@@ -37,6 +37,18 @@
         <button type="submit" class="btn btn-secondary" (click)="resetForm()">Clear</button>
         <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Checkout</button>
       </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Items</label>
+        <div class="col-sm-10" formArrayName="items">
+          <div *ngFor="let item of checkoutForm.controls.items['controls']; let i=index" [formGroupName]="i">
+            <input type="text" formControlName="itemId" id="task{{i}}" class="form-control">
+            <input type="text" formControlName="itemName" id="task{{i}}" class="form-control">
+            <input type="text" formControlName="itemDesc" id="task{{i}}" class="form-control">
+            <input type="checkbox" formControlName="itemDone"> Mark as Done
+            <!-- <label class="form-check-label" for="itemDone">Mark as Done</label> -->
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </section>

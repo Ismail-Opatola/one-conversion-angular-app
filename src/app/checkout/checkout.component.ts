@@ -22,6 +22,9 @@ export class CheckoutComponent implements OnInit {
 
   constructor(formBuilder: FormBuilder) {
     this.checkoutForm = formBuilder.group({
+      // emailAddress: new FormControl(),
+      // quantity: new FormControl(),
+      // tos: new FormControl()
       emailAddress: [
         null,
         [
@@ -36,10 +39,19 @@ export class CheckoutComponent implements OnInit {
       tos: [
         null,
         Validators.requiredTrue
-      ]
-      // emailAddress: new FormControl(),
-      // quantity: new FormControl(),
-      // tos: new FormControl()
+      ],
+      // items: formBuilder.array([
+      //   new FormControl('Angular'),
+      //   new FormControl('React'),
+      // ])
+      items: formBuilder.array([
+        formBuilder.group({
+          itemId: ['1'],
+          itemName: ['ARC'],
+          itemDesc: ['Tutorials'],
+          itemDone: [null, Validators.requiredTrue],
+        })
+      ])
     });
   }
 

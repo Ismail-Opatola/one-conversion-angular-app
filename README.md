@@ -678,12 +678,85 @@ we need to Subscribe to the `Observable` to read the value
 
     this.formName.get('email').statusChanges.subcribe(data => {
       Console.log(data)
-    })
 
 2. For Entire Form
    - When subcribed to the observab;e - we will get the validation status of the entire form
+    })
    - syntax
 
     this.formName.statusChanges.subscribe(data => {
       console.log(data)
+    })
+
+##### Form Array
+
+Form Control - Any form feild in your form becomes a FormControl
+
+FormGroup - Group multiple FormControls
+
+DOM interactions in Angular Reactive Foprms are implemented using the Form Arrays
+
+FormArray - ArrayOf(FormControl) | ArrayOf(FormGroup)
+
+The status of the `FormArray` is calculated by reducing the statuses of it's children. If any one of the controls is invalid, the entire array becomes invalid
+
+###### Usecases
+
+- Creating a Form with simple array items
+  - option 1
+
+    this.checkoutForm = formBuilder.group({
+      items: this.formBuilder.array([
+        new FormControl('Fullname'),
+        new FormControl('email'),
+        new FormControl('password')
+      ])
+    })
+
+  - option 2 (explicit, prefered method)
+
+    this.checkoutForm = formBuilder.group({
+      items: formBuilder.array([
+        formBuilder.group({
+          itemId: ['1'],
+          itemName: ['ARC'],
+          itemDesc: ['Tutorials'],
+          itemDone: [null, Validators.requiredTrue],
+        })
+      ])
+    })
+
+- In the template file - let's loop the values and display them
+
+      <div class="col-sm-10" formArrayName="items">
+        <div *ngFor="let control of checkoutForm.controls.items['controls']; let i=index;">
+          <input type="text" [formControlName]="i" id="learn{{i}}">
+        </div>  
+      </div>
+
+- Reactive Form with array items and other form contols
+
+    this.checkoutForm = formBuilder.group({
+      email: [
+        null,
+        [
+          validators.minLength(5),
+          validators.maxLength(5),
+          validators.required,
+          validators.email
+        ]
+      ],
+      quantity: [
+        null,
+        [ Validators.required ]
+      ],
+      tos: [
+        null,
+        Validators.requiredTrue
+      ],
+      items: this.formBuilder.array([
+        new FormControl('Fullname'),
+        new FormControl('email'),
+        new FormControl('password')
+      ])
     })
