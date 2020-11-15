@@ -838,3 +838,17 @@ Example
     - Once order is complete: status should be: _Complete_
 
     ng g c observable
+
+#### Dependency Injection
+
+Dependency Injection (DI), is an important appolication design pattern.
+
+Dependency injection is the ability to add the functionality of components at runtime
+
+The DI framework lets youy supply data to a component from an injectable _service_ class, defined in its own file
+
+Angular has its own DI framework, which is typically used in the design of Angular applications to increase their efficiency and modularity
+
+Dependencies are _Services_ or objects that a class need sot perform its function
+
+DI is a coding pattern in which a class asks for dependencies from extermnal sources rather than creating them itself
