@@ -4,6 +4,7 @@ import {
   FormBuilder,
   FormControl,
   NgForm,
+  FormArray,
   Validators,
   FormControlName
 } from '@angular/forms';
@@ -19,6 +20,8 @@ export class CheckoutComponent implements OnInit {
   emailAddress: FormControlName;
   quantity: FormControlName;
   tos: FormControlName;
+  // items: FormArray;
+  formBuilder: FormBuilder;
 
   constructor(formBuilder: FormBuilder) {
     this.checkoutForm = formBuilder.group({
@@ -56,6 +59,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.checkoutForm.get('items').setValue([{
+      itemId: ['1'],
+      itemName: ['Learning'],
+      itemDesc: ['Angular 9'],
+      itemDone: [null, Validators.requiredTrue]
+    }]);
+
+    console.log(this.checkoutForm.get('items').value.length);
+    console.log(this.checkoutForm.get('items').value);
+    console.log(this.checkoutForm.get('items').value[0].itemName);
+
+    this.checkoutForm.get('items').reset();
 
     // listen/read email field value onChange
     // this.checkoutForm.get('emailAddress').valueChanges.subscribe(data => {
@@ -100,5 +115,29 @@ export class CheckoutComponent implements OnInit {
 
   resetForm = () => {
     this.checkoutForm.reset();
+  }
+
+
+  get items(): FormArray {
+    return this.checkoutForm.get('items') as FormArray;
+  }
+
+  // insert new item into the FormArray
+  addNewItem = () => {
+    const itemLength = this.items.length;
+    const newItem = formBuilder.group({
+      itemId: [itemLength + 1],
+      itemName: [''],
+      itemDesc: [''],
+      itemDone: [null, Validators.requiredTrue],
+    });
+
+    this.items.push(newItem);
+    console.log(`added new item feilds`);
+  }
+
+  removeItem = (itemIndex: number) => {
+    this.items.removeAt(itemIndex);
+    console.log(`removed item ${itemIndex} fields`);
   }
 }

@@ -33,10 +33,8 @@
           TOS opt-in is required.
         </small>
       </div>
-      <div class="btn-group w-100" role="group" aria-label="Basic example">
-        <button type="submit" class="btn btn-secondary" (click)="resetForm()">Clear</button>
-        <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Checkout</button>
-      </div>
+
+      <hr>
       <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Items</label>
         <div class="col-sm-10" formArrayName="items">
@@ -46,8 +44,16 @@
             <input type="text" formControlName="itemDesc" id="task{{i}}" class="form-control">
             <input type="checkbox" formControlName="itemDone"> Mark as Done
             <!-- <label class="form-check-label" for="itemDone">Mark as Done</label> -->
+            <hr>
+            <button type="submit" class="btn btn-link" (click)="removeItem(i)">Remove Item</button>
+            <hr>
           </div>
         </div>
+      </div>
+      <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-link" (click)="resetForm()">Clear</button>
+        <button type="submit" class="btn btn-link" (click)="addNewItem()">Add Item</button>
+        <button type="submit" class="btn btn-success w-50" [disabled]="!checkoutForm.valid">Checkout</button>
       </div>
     </form>
   </div>

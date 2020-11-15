@@ -760,3 +760,48 @@ The status of the `FormArray` is calculated by reducing the statuses of it's chi
         new FormControl('password')
       ])
     })
+
+##### Nested Form Array
+
+We need nested form array for complex form requirements involving dynamic items which are rendered into form.
+
+We are able to group form controls and form groups into a Form Array. We can also dynamically add or remove rows into the Form Arrays via Form Groups
+
+FormArray aggregates the values of the "child" FormControl into an Array
+
+The ststus of the FormArray is calculated by reducing the statuses of its children. If any of the controld is invalid, the entire array bacomes invalid
+
+###### Use cases
+
+getting the properties and methods of the array
+
+- console.log(myArr.value)
+- console.log(myArr.status)
+- console.log(myArr.length)
+- console.log(arry.setValue(['name', 'lastname']))
+- console.log(arry.patchValue(['name', 'lastname']))
+- console.log(arry.reset(['name', 'lastname']))
+- console.log(myArr.clear())
+
+##### Reactive Forms - Add Rows Dynamically
+
+There are cases when we don't know how many rows or feilds to expect. That's when we will need to dynamically "Add Rows" to the form on the fly.
+
+Adding new rows to form simply refers to appending/pushing the `FormGroup` or `FormControls` to the `FormArray` at _runtime_
+
+##### Remove Dynamic Rows from Form
+
+We will need to capture vthe index of the row which we want to remove from the array. 
+
+Using the `indexAt` method - we can easity point to the item we want to remove
+
+A method to remove the item from the array using `removeAt`
+
+    removeItem(index){
+      const arr = this.items.length;
+      this.items.removeAt(index)
+    }
+
+In the template file - a link to click to remove the item
+
+    <a (click)="remove()">REmove Item</a>
