@@ -805,3 +805,36 @@ A method to remove the item from the array using `removeAt`
 In the template file - a link to click to remove the item
 
     <a (click)="remove()">REmove Item</a>
+
+### AngularHTTP
+
+#### Observables
+
+- What are _Observables_
+  - _Observable_ is part of RxJs library
+  - a sequence of data which is emitted asynchronously (most of the times) over a period of time
+  - data can be of any type - string, events etc
+  - angular make use of observables as an interface to handle a variety of common **async** oprations.
+  - They're the recommended technique for _event handling_, _async programming_, and _handling multiple values_
+  - an _Observable_ can deliver multiple values of any type -- litrals, messages, or events, depending on the context
+- what is an _Observer_
+  - When we create an _Observable_, we keep track on the observable using _Observer_
+  - _Observer_ is continuosly listening to _Observable_
+  - we can control when to start and stop listening to the _Observable_ using the _Observer_
+  - _Observer_ has 3 methods that you can use
+    - `next()`, `error()` and `complete()`
+- What and how to Subscribe
+  - we subscribe to an observable in order to process the data
+  - we can have multi subscribers for any given _Observable_
+  - we can also unsubscribe from an _Subscriber_
+- Multi Subscribers to Single Observable
+
+Example
+
+- Shopping cart
+  - user places an order
+    - initial state of the order is: _InProgress_
+    - After sometime once its received status shows: _Proccessing_
+    - Once order is complete: status should be: _Complete_
+
+    ng g c observable

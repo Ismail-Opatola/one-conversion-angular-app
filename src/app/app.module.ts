@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     PageNotFoundComponent,
     AdminHomeComponent,
     SigninComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
