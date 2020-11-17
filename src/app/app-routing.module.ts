@@ -13,6 +13,7 @@ import { AdminGuardGuard } from './admin-guard.guard';
 import { SigninComponent } from './signin/signin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'products', pathMatch: 'full'},
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'observable',
     component: ObservableComponent
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent
   },
   // {path: 'learning', component: TasksComponent},
   // {path: 'products', component: ProductsComponent},

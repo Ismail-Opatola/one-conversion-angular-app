@@ -19,8 +19,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
-@NgModule({
+@NgModule({ 
   declarations: [
     AppComponent,
     TasksComponent,
@@ -35,7 +36,8 @@ import { ObservableComponent } from './observable/observable.component';
     AdminHomeComponent,
     SigninComponent,
     CheckoutComponent,
-    ObservableComponent
+    ObservableComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

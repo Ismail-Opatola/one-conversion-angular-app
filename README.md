@@ -852,3 +852,46 @@ Angular has its own DI framework, which is typically used in the design of Angul
 Dependencies are _Services_ or objects that a class need sot perform its function
 
 DI is a coding pattern in which a class asks for dependencies from extermnal sources rather than creating them itself
+
+#### Services
+
+Services allows us to create reusable common shared functionality between various mudule nand component
+
+Services are singleton
+
+Services are injected into application using Dependency Injection mechanism
+
+We need to crete and inject services in components where we want to use them
+
+Services are an abstraction layer or process layer which of our app business logic
+
+Services are commonly used for making HTTP requests to our endpoints APIs to request and receive the response
+
+A servce can have a value, methods or a combination of both
+
+    Contacts - Module
+      Components
+        create contact
+        view contact
+        edit contact
+        delete contact
+      Services
+        contacts.service.ts
+          HTTP
+          Processing Data
+          Cleaning Data
+
+Services are used for sharing data btw components
+
+Importing and injecting services into components is called **Depency Injection**
+
+##### Generate services using cli
+
+ng g c contacts
+
+ng generate service contacts
+
+import { Injectable } from '@anguler/core';
+
+we can generate the service in any folder we want. The best practice is always to keep all services related into modules
+
