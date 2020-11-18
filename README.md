@@ -806,7 +806,14 @@ In the template file - a link to click to remove the item
 
     <a (click)="remove()">REmove Item</a>
 
-### AngularHTTP
+### Angular HTTP
+
+- Observables
+- Dependency injection
+- Services
+- HttpClient - GET, PUT, POST, DELETE
+- HttpClient - Headers
+- HttpClient - Interceptors
 
 #### Observables
 
@@ -894,4 +901,27 @@ ng generate service contacts
 import { Injectable } from '@anguler/core';
 
 we can generate the service in any folder we want. The best practice is always to keep all services related into modules
+
+##### HttpClient
+
+`HttpClient` is used for performing HTTP request and responses
+
+The HttpClient service is available in the `@angular/common/http` package
+
+The new `HttpClient` service is included in the Http Client module which is used to initiate HTTP request and resposes on Angular apps
+
+The `HttpClientModule` needs to be imported inti the module. Ussaully in the app module.
+
+`HttpClient` also gives other i=useful functionality like interceptors, headers etc.
+
+###### HttpClient Methods
+
+- get()
+- post()
+- put()
+- delete()
+- head()
+- jsonp()
+- options()
+- patch()
 
