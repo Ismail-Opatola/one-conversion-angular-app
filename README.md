@@ -856,49 +856,49 @@ The DI framework lets youy supply data to a component from an injectable _servic
 
 Angular has its own DI framework, which is typically used in the design of Angular applications to increase their efficiency and modularity
 
-Dependencies are _Services_ or objects that a class need sot perform its function
+Dependencies are _Services_ or objects that a class needs to perform its function
 
 DI is a coding pattern in which a class asks for dependencies from extermnal sources rather than creating them itself
 
 #### Services
 
-Services allows us to create reusable common shared functionality between various mudule nand component
+- Services allows us to create reusable common shared functionality between various mudule and component
 
-Services are singleton
+- Services are singleton
 
-Services are injected into application using Dependency Injection mechanism
+- Services are injected into application using Dependency Injection mechanism
 
-We need to crete and inject services in components where we want to use them
+- We need to crete and inject services in components where we want to use them
 
-Services are an abstraction layer or process layer which of our app business logic
+- Services are an abstraction layer or process layer which of our app business logic
 
-Services are commonly used for making HTTP requests to our endpoints APIs to request and receive the response
+- Services are commonly used for making HTTP requests to our endpoints APIs to request and receive the response
 
-A servce can have a value, methods or a combination of both
+- A service can have a value, methods or a combination of both
 
-    Contacts - Module
-      Components
-        create contact
-        view contact
-        edit contact
-        delete contact
-      Services
-        contacts.service.ts
-          HTTP
-          Processing Data
-          Cleaning Data
+      Contacts - Module
+        Components
+          create contact
+          view contact
+          edit contact
+          delete contact
+        Services
+          contacts.service.ts
+            HTTP
+            Processing Data
+            Cleaning Data
 
-Services are used for sharing data btw components
+- Services are used for sharing data btw components
 
-Importing and injecting services into components is called **Depency Injection**
+- Importing and injecting services into components is called **Depency Injection**
 
 ##### Generate services using cli
 
-ng g c contacts
+    ng g c contacts
 
-ng generate service contacts
+    ng generate service contacts
 
-import { Injectable } from '@anguler/core';
+    import { Injectable } from '@anguler/core';
 
 we can generate the service in any folder we want. The best practice is always to keep all services related into modules
 
@@ -912,7 +912,7 @@ The new `HttpClient` service is included in the Http Client module which is used
 
 The `HttpClientModule` needs to be imported inti the module. Ussaully in the app module.
 
-`HttpClient` also gives other i=useful functionality like interceptors, headers etc.
+`HttpClient` also gives other useful functionality like __interceptors__, __headers__ etc.
 
 ###### HttpClient Methods
 
@@ -924,4 +924,35 @@ The `HttpClientModule` needs to be imported inti the module. Ussaully in the app
 - jsonp()
 - options()
 - patch()
+
+###### Benefits of HttpClient
+
+- HttpClient includes Observable API
+- HttpClient can have the HTTP Headers in options
+- HttpClient includes the highly testability features
+- HttpClient includes typed request
+- HttpClient includes response objects
+- HttpClient includes request and response interception
+- HttpClient include error handling
+
+###### CRUD Operations using HttpClient
+
+- Create - usually a POST method call
+- Read - usually a PUT method call
+- Update - usually a PUT method call
+- Delete - is a Delete method call. _Technically we should never delete anything. only soft deletes which means setting a flag_
+
+We usually make Http calls in our services. however, there is no restriction on where you can use it
+
+###### __Setup Mock Server for how examples and app__
+
+setup json-server - fake REST API
+
+    npm i -g json-server
+
+    cd .\src\assets\
+
+    touch db.json
+
+    json-server --watch .\db.json
 
