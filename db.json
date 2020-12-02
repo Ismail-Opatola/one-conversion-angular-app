@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": 1, 
+      "firstname": "Ben", 
+      "lastname": "Gubar"
+    },
+    {
+      "id": 2, 
+      "firstname": "Sasha", 
+      "lastname": "Cowen"
+    },
+    {
+      "id": 3, 
+      "firstname": "Bright", 
+      "lastname": "Howard"
+    },
+    {
+      "id": 4, 
+      "firstname": "Suzzy", 
+      "lastname": "lu"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -125,7 +125,7 @@ export class CheckoutComponent implements OnInit {
   // insert new item into the FormArray
   addNewItem = () => {
     const itemLength = this.items.length;
-    const newItem = formBuilder.group({
+    const newItem = this.formBuilder.group({
       itemId: [itemLength + 1],
       itemName: [''],
       itemDesc: [''],

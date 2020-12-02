@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 // @injectable indicate this service class can be injected into any component
 @Injectable({
@@ -7,18 +8,10 @@ import { Injectable } from '@angular/core';
 })
 export class ContactsService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getContact(): any {
-    // HTTP calls here
-    const contactList = [
-      {contactId: 1, contactName: 'Njay'},
-      {contactId: 2, contactName: 'Tjay'},
-      {contactId: 3, contactName: 'Vjay'},
-      {contactId: 4, contactName: 'Henry'},
-      {contactId: 5, contactName: 'Juliet'}
-    ];
-    return contactList;
+  getContacts(): any {
+    return this.httpClient.get('http://localhost:3000/contacts');
   }
 
   callServiceFromTemplateDirectly(): void {

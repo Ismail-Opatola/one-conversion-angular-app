@@ -910,7 +910,7 @@ The HttpClient service is available in the `@angular/common/http` package
 
 The new `HttpClient` service is included in the Http Client module which is used to initiate HTTP request and resposes on Angular apps
 
-The `HttpClientModule` needs to be imported inti the module. Ussaully in the app module.
+The `HttpClientModule` needs to be imported into the module. Ussaully in the app module.
 
 `HttpClient` also gives other useful functionality like __interceptors__, __headers__ etc.
 
@@ -956,3 +956,25 @@ setup json-server - fake REST API
 
     json-server --watch .\db.json
 
+###### HttpClient GET
+
+Making API calls to retrieve data is a GET method call.
+
+To make a call, all we need is an endpoint or an API url
+
+    get["url", options: ()]
+    get['url', options: { headers: {}, params: {}, responseType: null, withCredentials: null}]
+
+The response type will be an _obervable_ which is then subscribe to, in order to read it values
+
+###### How to use HttpClient GET Method
+
+- Import `HttpClientModule` into App Module
+- Import `HttpClient` in our service or component wherever we are making the HTTP request
+  - It's good practice to have http calls in services
+  - reusable and easy to mentain
+  - easy to share btw components
+- Inject the `HttpClient` in the constructor method of the class
+- Implement the GET method call
+- Import the __Services__ into the required calling component class
+- Call the method to make Http request

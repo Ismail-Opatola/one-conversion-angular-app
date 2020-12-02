@@ -1,5 +1,5 @@
 <h2>List of Contacts</h2>
 <ul *ngFor="let contact of contactList">
-  <li>{{ contact.contactId }} {{ contact.contactName }}</li>
+  <li>{{ contact.firstname }} {{ contact.lastname }}</li>
 </ul>
 <button (click)="contactsService.callServiceFromTemplateDirectly()">Call Contact Service Directly</button>

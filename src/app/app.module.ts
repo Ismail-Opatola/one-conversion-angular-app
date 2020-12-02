@@ -20,6 +20,7 @@ import { SigninComponent } from './signin/signin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({ 
   declarations: [
@@ -42,6 +43,7 @@ import { ContactsComponent } from './contacts/contacts.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     TodoModule
