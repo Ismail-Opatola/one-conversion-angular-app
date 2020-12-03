@@ -978,3 +978,19 @@ The response type will be an _obervable_ which is then subscribe to, in order to
 - Implement the GET method call
 - Import the __Services__ into the required calling component class
 - Call the method to make Http request
+
+###### HttpClient POST
+
+Making API calls to retrieve data is a POST method call.
+
+To make a call, all we need is an endpoint or an API url
+
+    post("url", body, options: {})
+    post('url', body, options: { headers: {}, params: {}, responseType: null, withCredentials: null})
+
+The response type will be an _obervable_ which is then subscribe to, in order to process the data received
+
+###### How to use HttpClient POST Method
+
+step is similar to how to use GET above
+
