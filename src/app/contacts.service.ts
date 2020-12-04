@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+interface Data {
+  id: number;
+  firstname?: string;
+  lastname?: string;
+}
+
 // @injectable indicate this service class can be injected into any component
 @Injectable({
   providedIn: 'root'
@@ -28,7 +34,7 @@ export class ContactsService {
     return this.httpClient.post('http://localhost:3000/contacts', data, { headers: httpHeaders });
   }
 
-  updateContact(data: object): Observable<any> {
+  updateContact(data: Data): Observable<any> {
     const httpHeaders = new HttpHeaders();
     httpHeaders.append('content-type', 'application/json');
 

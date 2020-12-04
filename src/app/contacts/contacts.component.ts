@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
 
+interface Data {
+  id: number;
+  firstname: string;
+  lastname: string;
+}
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -34,7 +40,7 @@ export class ContactsComponent implements OnInit {
     console.log(form.value.id);
     console.log(form.value.firstname);
     console.log(form.value.lastname);
-    const newData: object = {
+    const newData: Data = {
       id: form.value.id,
       firstname: form.value.firstname,
       lastname: form.value.lastname
@@ -48,7 +54,7 @@ export class ContactsComponent implements OnInit {
 
   updateContact(contactId: number): void {
     // mock form data
-    const newData: object = {
+    const newData: Data = {
       id: contactId,
       firstname: 'Remy',
       lastname: 'Clarkson'
