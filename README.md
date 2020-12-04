@@ -1004,3 +1004,15 @@ To make a call, all we need is an endpoint or an API url
     put('url', body, options: { headers: {}, params: {}, responseType: null, withCredentials: null})
 
 The response type will be an _obervable_ which is then subscribe to, in order to process the data received
+
+###### HttpClient DELETE
+
+Making API calls to DELETE existing data is a DELETE method call.
+
+To make a call, all we need is an endpoint or an API url
+
+    delete("url", options: {})
+    delete('url', options: { headers: {}, params: {}, responseType: null, withCredentials: null})
+
+The response type will be an _obervable_ which is then subscribe to, in order to process the data received
+

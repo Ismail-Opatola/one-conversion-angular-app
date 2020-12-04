@@ -22,7 +22,9 @@
 <hr>
 <br>
 <div *ngIf="isSent || isUpdated">Contact created successfully</div>
+<div *ngIf="isDeleted">Contact successfully deleted</div>
 <br>
 <hr>
 <br>
 <button (click)="updateContact(3)">update Contact</button>
+<button (click)="deleteContact(3)">delete Contact</button>

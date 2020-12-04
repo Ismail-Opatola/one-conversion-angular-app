@@ -21,6 +21,7 @@ export class ContactsComponent implements OnInit {
   contactList: any;
   isSent = false;
   isUpdated = false;
+  isDeleted = false;
 
   ngOnInit(): void {
     this.contactsService.getContacts().subscribe((data: any[]) => {
@@ -63,5 +64,11 @@ export class ContactsComponent implements OnInit {
     this.contactsService.updateContact(newData).subscribe(data => {
       this.isUpdated = true;
     });
+  }
+
+  deleteContact(contactId: number): void {
+    this.contactsService.deleteContact(contactId).subscribe(data => {
+      this.isDeleted = true;
+    })
   }
 }

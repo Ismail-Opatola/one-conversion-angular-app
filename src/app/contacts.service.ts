@@ -44,6 +44,11 @@ export class ContactsService {
     return this.httpClient.put(endpoint, data, { headers: httpHeaders });
   }
 
+  deleteContact(id: number): Observable<any> {
+    const endpoint = `http://localhost:3000/contacts/${id}`;
+    return this.httpClient.delete(endpoint);
+  }
+
   callServiceFromTemplateDirectly(): void {
     console.log('called contact service from template directly');
   }
