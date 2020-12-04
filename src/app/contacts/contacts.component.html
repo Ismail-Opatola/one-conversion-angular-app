@@ -3,3 +3,26 @@
   <li>{{ contact.firstname }} {{ contact.lastname }}</li>
 </ul>
 <button (click)="contactsService.callServiceFromTemplateDirectly()">Call Contact Service Directly</button>
+<br>
+<hr>
+<br>
+<h3>Create New Contact</h3>
+<br>
+<hr>
+<br>
+<form #addNewContactForm="ngForm" (ngSubmit)="addNewContact(addNewContactForm)">
+  <div class="form-group">
+    <input type="text" class="form-control" id="id" name="id" ngModel required placeholder="id">
+    <input type="text" class="form-control" id="firstname" name="firstname" ngModel required placeholder="firstname">
+    <input type="text" class="form-control" id="lastname" name="lastname" ngModel required placeholder="lastname">
+  </div>
+  <button type="submit" class="btn btn-primary w-100" [disabled]="!addNewContactForm.valid">Submit</button>
+</form>
+<br>
+<hr>
+<br>
+<div *ngIf="isSent">Contact created successfully</div>
+<br>
+<hr>
+<br>
+<!-- <button (click)="addNewContact()">Add Contact</button> -->

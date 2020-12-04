@@ -13,6 +13,7 @@ export class ContactsComponent implements OnInit {
   // constructor(private contactsService: ContactsService) { }
 
   contactList: any;
+  isSent = false;
 
   ngOnInit(): void {
     this.contactsService.getContacts().subscribe((data: any[]) => {
@@ -20,4 +21,27 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  addNewContact(form): void {
+    // mock form data
+    // const newData: object = {
+    //   id: 8,
+    //   firstname: 'Jerry',
+    //   lastname: 'Springer'
+    // };
+
+    // dynamic data from form
+    console.log(form.value.id);
+    console.log(form.value.firstname);
+    console.log(form.value.lastname);
+    const newData: object = {
+      id: form.value.id,
+      firstname: form.value.firstname,
+      lastname: form.value.lastname
+    };
+
+    this.contactsService.createContact(newData).subscribe(data => {
+      console.log(data);
+      this.isSent = true;
+    });
+  }
 }
