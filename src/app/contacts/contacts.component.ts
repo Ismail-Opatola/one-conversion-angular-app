@@ -14,6 +14,7 @@ export class ContactsComponent implements OnInit {
 
   contactList: any;
   isSent = false;
+  isUpdated = false;
 
   ngOnInit(): void {
     this.contactsService.getContacts().subscribe((data: any[]) => {
@@ -42,6 +43,19 @@ export class ContactsComponent implements OnInit {
     this.contactsService.createContact(newData).subscribe(data => {
       console.log(data);
       this.isSent = true;
+    });
+  }
+
+  updateContact(contactId: number): void {
+    // mock form data
+    const newData: object = {
+      id: contactId,
+      firstname: 'Remy',
+      lastname: 'Clarkson'
+    };
+
+    this.contactsService.updateContact(newData).subscribe(data => {
+      this.isUpdated = true;
     });
   }
 }

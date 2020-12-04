@@ -981,7 +981,7 @@ The response type will be an _obervable_ which is then subscribe to, in order to
 
 ###### HttpClient POST
 
-Making API calls to retrieve data is a POST method call.
+Making API calls to CREATE data is a POST method call.
 
 To make a call, all we need is an endpoint or an API url
 
@@ -994,3 +994,13 @@ The response type will be an _obervable_ which is then subscribe to, in order to
 
 step is similar to how to use GET above
 
+###### HttpClient PUT
+
+Making API calls to UPDATE existing data is a PUT method call.
+
+To make a call, all we need is an endpoint or an API url
+
+    put("url", body, options: {})
+    put('url', body, options: { headers: {}, params: {}, responseType: null, withCredentials: null})
+
+The response type will be an _obervable_ which is then subscribe to, in order to process the data received

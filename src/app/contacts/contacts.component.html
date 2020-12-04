@@ -21,8 +21,8 @@
 <br>
 <hr>
 <br>
-<div *ngIf="isSent">Contact created successfully</div>
+<div *ngIf="isSent || isUpdated">Contact created successfully</div>
 <br>
 <hr>
 <br>
-<!-- <button (click)="addNewContact()">Add Contact</button> -->
+<button (click)="updateContact(3)">update Contact</button>

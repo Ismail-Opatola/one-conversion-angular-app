@@ -28,6 +28,16 @@ export class ContactsService {
     return this.httpClient.post('http://localhost:3000/contacts', data, { headers: httpHeaders });
   }
 
+  updateContact(data: object): Observable<any> {
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('content-type', 'application/json');
+
+    const endpoint = `http://localhost:3000/contacts/${data.id}`;
+
+    // put request
+    return this.httpClient.put(endpoint, data, { headers: httpHeaders });
+  }
+
   callServiceFromTemplateDirectly(): void {
     console.log('called contact service from template directly');
   }
