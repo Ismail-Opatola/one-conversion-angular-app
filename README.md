@@ -1025,7 +1025,7 @@ HttpHeaders are Immutable - they cannot be modified. __Some of the examples of v
 - Authorization
 - Content-type
   
-We can add Headers to  `POST, GET, DELETE, PUT`. Headers are defined using HttpHeaders. __HttpHeaders consist of 7 methods__
+We can add Headers to  `POST, GET, DELETE, PUT`. Headers are defined using `HttpHeaders`. __HttpHeaders consist of 7 methods__
 
 1. Append
 2. Has
@@ -1044,3 +1044,41 @@ code examples
     httpHeaders.set('x-contenyt-id', 'your-value')
     httpHeaders.has('x-content-id',"")
     httpHeader.keys() //@return all the keys of the headers
+
+###### HttpClient Params
+
+We can send Params with our http calls
+
+`HttpParams` are immutable - they cannotbe modified
+
+Some of the examples of variuos HTTP Params include _sending ID for update_ or _Delete API calls_
+
+We can add Params to `POST, GET, DELETE, PUT`. __HttpHeaders consist of 8 methods__
+
+1. append
+2. has
+3. get
+4. keys
+5. getAll
+6. set
+7. delete
+8. toString
+
+We define the parameters using `HttpParams` using `fromObject` and `fromString`
+
+    const params = new HttpParams({
+      fromObject: {
+        param1: 'foo',
+        param2: 'bar',
+      }
+    })
+
+    // output - url encoded format
+    // http://localhost:3000/test?param1=foo&param2=bar
+
+    const params = new HttpParams({
+      fromString: `param1=${foo}&param2=${bar`
+    })
+
+    // output - url encoded format
+    // http://localhost:3000/test?param1=foo&param2=bar

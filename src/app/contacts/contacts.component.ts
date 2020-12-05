@@ -29,7 +29,7 @@ export class ContactsComponent implements OnInit {
     });
   }
 
-  addNewContact(form): void {
+  addNewContact(form: any): void {
     // mock form data
     // const newData: object = {
     //   id: 8,
@@ -69,6 +69,12 @@ export class ContactsComponent implements OnInit {
   deleteContact(contactId: number): void {
     this.contactsService.deleteContact(contactId).subscribe(data => {
       this.isDeleted = true;
-    })
+    });
+  }
+
+  getContact(): void {
+    this.contactsService.getContact().subscribe(data => {
+      console.log(data);
+    });
   }
 }

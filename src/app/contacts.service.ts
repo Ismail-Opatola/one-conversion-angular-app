@@ -64,6 +64,32 @@ export class ContactsService {
     return this.httpClient.delete(endpoint);
   }
 
+  // get contact by id
+  getContact(): Observable<any>{
+    // using http parameters
+    // http://localhost:3000/contacts?query=tovi
+    // const httpParams = new HttpParams({
+    //   fromObject: {
+    //     firstname: 'tovi'
+    //   }
+    // });
+    const httpParams = new HttpParams({
+      fromObject: {
+        id: ['2', '3'],
+      }
+    });
+    // const httpParams = new HttpParams({
+    //   filter with params
+    //   fromObject: {
+    //     id: ['2', '3'],
+    //     firstname: 'tovi'
+    //   }
+    // });
+
+    const endpoint = `http://localhost:3000/contacts`;
+    return this.httpClient.get(endpoint, {params: httpParams});
+  }
+
   callServiceFromTemplateDirectly(): void {
     console.log('called contact service from template directly');
   }
