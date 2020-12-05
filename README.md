@@ -1082,3 +1082,25 @@ We define the parameters using `HttpParams` using `fromObject` and `fromString`
 
     // output - url encoded format
     // http://localhost:3000/test?param1=foo&param2=bar
+
+###### HttpClient Interceptors
+
+Intercepts and handles an HttpRequest or HttpResponse
+
+Interceptors transform the outgoing request before passing it to the next interceptor in the chain, by calling `next.handle(transformedReq)`
+
+An interceptor may transform the response event stream as well, by applying additional RxJS operators on the stream returned by `next.handle()`
+
+It's reare but valid for an inerceptor to return multiple response on the event stream for a single request
+
+_client(UI)_ -> req -> _interceptor_ --> <-- res <- _server_
+
+###### **Interceptors Use-cases**
+
+1. Whenever there is http call, log all activities
+2. Whenever there is an http call, show loading icon
+
+###### **How to Generate interceptors**
+
+    ng g interceptor logger
+

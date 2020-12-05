@@ -20,7 +20,8 @@ import { SigninComponent } from './signin/signin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoggerInterceptor } from './logger.interceptor';
 
 @NgModule({ 
   declarations: [
@@ -49,7 +50,9 @@ import { HttpClientModule } from '@angular/common/http';
     TodoModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: LocationStrategy, useClass: PathLocationStrategy},
+    {provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptor, multi: true}
+
   ],
   bootstrap: [AppComponent]
 })
