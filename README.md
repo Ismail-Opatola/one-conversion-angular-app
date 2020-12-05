@@ -1016,3 +1016,31 @@ To make a call, all we need is an endpoint or an API url
 
 The response type will be an _obervable_ which is then subscribe to, in order to process the data received
 
+###### HttpClient Headers
+
+We can send Headers with our HTTP calls
+
+HttpHeaders are Immutable - they cannot be modified. __Some of the examples of various HTTP headers are__
+  
+- Authorization
+- Content-type
+  
+We can add Headers to  `POST, GET, DELETE, PUT`. Headers are defined using HttpHeaders. __HttpHeaders consist of 7 methods__
+
+1. Append
+2. Has
+3. Get
+4. Keys
+5. getAll
+6. Set
+7. delete
+
+code examples
+
+    const httpHeaders = new HttpHeaders()
+
+    httpHeaders.append('content-type', application/json')
+    httpHeaders.append('Authorization', 'id-token')
+    httpHeaders.set('x-contenyt-id', 'your-value')
+    httpHeaders.has('x-content-id',"")
+    httpHeader.keys() //@return all the keys of the headers

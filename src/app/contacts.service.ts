@@ -19,16 +19,31 @@ export class ContactsService {
 
   getContacts(): Observable<any> {
     // set headers
-    const httpHeaders = new HttpHeaders();
-    httpHeaders.append('content-type', 'application/json');
+    const httpHeaders = new HttpHeaders({
+      'content-type': 'application/json',
+      Authorization: 'fake-id-token-35hegeheee-wjwihdhdidjd'
+    });
 
     // get request
-    return this.httpClient.get('http://localhost:3000/contacts');
+    return this.httpClient.get('http://localhost:3000/contacts', { headers: httpHeaders });
   }
 
   createContact(data: object): Observable<any> {
-    const httpHeaders = new HttpHeaders();
-    httpHeaders.append('content-type', 'application/json');
+    let httpHeaders = new HttpHeaders({
+      'content-type': 'application/json',
+      Authorization: 'fake-id-token-35hegeheee-wjwihdhdidjd',
+      timeOutSeconds: '3000'
+    });
+
+    // set custom headers
+    httpHeaders = httpHeaders.set('arc-tutorials-id', '118');
+
+    const time: string = httpHeaders.get('timeOutSeconds');
+
+    if (time === '3000') {
+      // at the api - we can check for empty auth token then redirect user
+      httpHeaders = httpHeaders.set('Authorization', '');
+    }
 
     // post request
     return this.httpClient.post('http://localhost:3000/contacts', data, { headers: httpHeaders });
