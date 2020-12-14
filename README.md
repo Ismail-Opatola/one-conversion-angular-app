@@ -1108,3 +1108,57 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 
 #### Angular Testing
 
+1. Introduction
+2. Running Unit Tests
+   1. Testing smaller independent *modules*, *services* or *pipes* is known as unit testing
+   2. focus is on task level testing
+   3. provides input and verifies output for smaller sample
+   4. ideal for testing individual pieces of the big picture
+   5. frameworks used are **Jasmine** and **Karma**
+3. Running E2E Tests
+   1. Automating the entire end to end functional flow
+   2. Help in building automated test suites when the application or product sizes outgrows
+   3. **Protractor** framework is used for e2e testing
+   4. **BDD** frameworks like **Cucumber** are also used for testing the functional flow
+4. Skip Tests
+5. Run "specific" tests
+6. Generate code coverage report
+
+##### Testing Utilities provided by angular
+
+- Auto generate code
+- Angular natively supports unit tests using Jasmine and Karma
+- Angular CLI has the built-in commands to run both unit and e2e tests
+- Using CLI - we generate the test files (specs)
+- we can also use Angular *In-Memory* service to mock the service
+
+**Jasmine Framework** - *UNIT TESTING*
+
+- Jassmine is an OSS testing framwork fo javascript. Its is used for *writing test scripts*.
+- Jasmine is Behavior Driven Development testing framework
+- In BDD - the test are written in non-technical language which makes it easy for business analyts to write test specs
+- It does not require any Js framework
+- has native support for Async Testing
+- using Spy objects, we can target an element we want to test
+
+**Basic Syntax - E2E Testing**
+
+    describe('appComponent', () => {
+      it('it should navigate', () => {
+        console.log('navigated to page');
+      })
+    })
+
+**Karma Framework** - *UNIT TETSING*
+
+- OSS Test Runner for Js. It's used for *running and executing test scripts*.
+- karma is mentained by the Angular core team
+- The framework is natively integrated into Angular apps by default
+- The framework can be integrated into the build pipelines which means it will run in our build and deployment pipelines
+
+**Protractor Framework** - *E2E TESTING*
+
+- OSS e2e testing framework
+- built on top of WebDriver
+- run automated regression tests for any web application
+- runs test using an actual browser
