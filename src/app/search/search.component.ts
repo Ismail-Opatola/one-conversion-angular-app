@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    // load the data 
+
   }
 
 }

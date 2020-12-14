@@ -475,7 +475,7 @@ import bootstrap and jquery in `angular.json` file
             ...
             "styles": [
               ...
-              "node_modules/bootstrap/dist/css/bootstrap.nin.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -902,7 +902,7 @@ DI is a coding pattern in which a class asks for dependencies from extermnal sou
 
 we can generate the service in any folder we want. The best practice is always to keep all services related into modules
 
-##### HttpClient
+#### HttpClient
 
 `HttpClient` is used for performing HTTP request and responses
 
@@ -914,7 +914,7 @@ The `HttpClientModule` needs to be imported into the module. Ussaully in the app
 
 `HttpClient` also gives other useful functionality like __interceptors__, __headers__ etc.
 
-###### HttpClient Methods
+##### HttpClient Methods
 
 - get()
 - post()
@@ -925,7 +925,7 @@ The `HttpClientModule` needs to be imported into the module. Ussaully in the app
 - options()
 - patch()
 
-###### Benefits of HttpClient
+##### Benefits of HttpClient
 
 - HttpClient includes Observable API
 - HttpClient can have the HTTP Headers in options
@@ -935,7 +935,7 @@ The `HttpClientModule` needs to be imported into the module. Ussaully in the app
 - HttpClient includes request and response interception
 - HttpClient include error handling
 
-###### CRUD Operations using HttpClient
+##### CRUD Operations using HttpClient
 
 - Create - usually a POST method call
 - Read - usually a PUT method call
@@ -1083,15 +1083,15 @@ We define the parameters using `HttpParams` using `fromObject` and `fromString`
     // output - url encoded format
     // http://localhost:3000/test?param1=foo&param2=bar
 
-###### HttpClient Interceptors
+##### HttpClient Interceptors
 
 Intercepts and handles an HttpRequest or HttpResponse
 
 Interceptors transform the outgoing request before passing it to the next interceptor in the chain, by calling `next.handle(transformedReq)`
 
-An interceptor may transform the response event stream as well, by applying additional RxJS operators on the stream returned by `next.handle()`
+An interceptor may **transform the response event stream** as well, by applying additional RxJS operators on the stream returned by `next.handle()`
 
-It's reare but valid for an inerceptor to return multiple response on the event stream for a single request
+It's rare but valid for an inerceptor to return multiple response on the event stream for a single request
 
 _client(UI)_ -> req -> _interceptor_ --> <-- res <- _server_
 
@@ -1103,4 +1103,8 @@ _client(UI)_ -> req -> _interceptor_ --> <-- res <- _server_
 ###### **How to Generate interceptors**
 
     ng g interceptor logger
+
+read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors-in-angular-db450f8a62d6>
+
+#### Angular Testing
 

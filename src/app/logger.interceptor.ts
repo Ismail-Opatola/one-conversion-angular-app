@@ -3,9 +3,13 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+
 
 @Injectable()
 export class LoggerInterceptor implements HttpInterceptor {
@@ -25,6 +29,16 @@ export class LoggerInterceptor implements HttpInterceptor {
     request.headers.set('Authorization', httpAuth);
     console.log(request);
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      retry(2),
+      catchError((error: HttpErrorResponse) => {
+        if (error.status !== 401) {
+          // 401 handled in auth.interceptor - Unauthorized client error status response code
+          // this is just a logger interceptor
+          console.log(error.message);
+        }
+        return throwError(error);
+      })
+    );
   }
 }
