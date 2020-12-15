@@ -1141,7 +1141,7 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 - has native support for Async Testing
 - using Spy objects, we can target an element we want to test
 
-**Basic Syntax - E2E Testing**
+**Basic Syntax - E2E Testing**.
 
     describe('appComponent', () => {
       it('it should navigate', () => {
@@ -1162,3 +1162,11 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 - built on top of WebDriver
 - run automated regression tests for any web application
 - runs test using an actual browser
+
+##### Important Testing Concepts
+
+Test configuration
+  Unit test config - karma - `./karma.conf.js` file
+  E2E Test - Protractor - `./e2e/protractor.conf.js` file
+
+##### Run Unit Test In Angular
