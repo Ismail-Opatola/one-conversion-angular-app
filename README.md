@@ -1170,3 +1170,16 @@ Test configuration
   E2E Test - Protractor - `./e2e/protractor.conf.js` file
 
 ##### Run Unit Test In Angular
+
+To run unit test
+  
+    ng test
+
+CLI commands
+
+    ng serve --browsers=chrome
+    --code-coverage
+    --karmaConfig=karmaConfig
+    --maim=main
+    --condfiguration=configuration
+    --progress=true|false
