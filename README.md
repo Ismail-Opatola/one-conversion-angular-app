@@ -1165,9 +1165,10 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 
 ##### Important Testing Concepts
 
-Test configuration
-  Unit test config - karma - `./karma.conf.js` file
-  E2E Test - Protractor - `./e2e/protractor.conf.js` file
+**Test configuration**:
+
+1. Unit test config - karma - `./karma.conf.js` file
+2. E2E Test - Protractor - `./e2e/protractor.conf.js` file
 
 ##### Run Unit Test In Angular
 
@@ -1177,9 +1178,25 @@ To run unit test
 
 CLI commands
 
-    ng serve --browsers=chrome
+    ng test --browsers=chrome
     --code-coverage
     --karmaConfig=karmaConfig
     --maim=main
     --condfiguration=configuration
     --progress=true|false
+
+##### Run E2E Test In Angular
+
+Angular uses Protractor for running the e2e tests
+
+_Prortactor is built on Selenium web-driver_.
+
+To run test
+
+    ng e2e
+
+CLI commands
+
+    ng e2e --port=4200
+    --baseHref=foo.com
+    --code-coverage
