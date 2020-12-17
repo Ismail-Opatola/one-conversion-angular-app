@@ -791,7 +791,7 @@ Adding new rows to form simply refers to appending/pushing the `FormGroup` or `F
 
 ##### Remove Dynamic Rows from Form
 
-We will need to capture vthe index of the row which we want to remove from the array. 
+We will need to capture vthe index of the row which we want to remove from the array.
 
 Using the `indexAt` method - we can easity point to the item we want to remove
 
