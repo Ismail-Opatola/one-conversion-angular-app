@@ -1199,4 +1199,35 @@ CLI commands
 
     ng e2e --port=4200
     --baseHref=foo.com
-    --code-coverage
+    --code-coverage 
+
+##### SKIP Tests
+
+Ways to skip tests in Angular: For New applications, For Existing applications, For existing tests.
+
+Helpfull for suppressing failing test case than fix it.
+
+1. Using CLI - _for new application_
+
+        ng new {{appName}} --skipTests
+
+2. By setting `skipTests` to `true` in schematics in Angular.json - _for existing application_
+
+        "schematics": {
+          "@schematics/angular:component": {
+            ...
+            "skipTests": true
+          }
+        },
+
+3. By adding `x` in front of the tests - _for existing application_
+
+        // skip entire test suite
+        xdescribe
+          it
+          it
+
+        // skip test case
+        xit
+
+`*` in the test report denotes skiped test suites.
