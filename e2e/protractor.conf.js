@@ -11,9 +11,9 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: [
     // execute all e2e test scripts
-    './src/**/*.e2e-spec.ts',
+    './src/**/*.e2e-spec.ts'
     // execute specific e2e test script
-    './src/**/app.e2e-spec.ts'
+    // './src/**/app.e2e-spec.ts'
   ],
   capabilities: {
     browserName: 'chrome'

@@ -1246,3 +1246,38 @@ Develop svaes time in just running the required tests and not all tests
   - `fit`
 - For E2E Tests: By adding specific specs in the e2e spec definitions
   - In _protractor.conf.js_ > mention which specs we need to run
+
+##### Generate Code Coverage Report
+
+Angular has support for generating code coverage test reports
+
+Most, if not all, clients will ask you to submit the test code coverage report
+
+If the code coverage is more than **85%** - your code is considered to be good
+
+We can generate code coverage or both **Unit** and **E2E Tests**
+
+1. For Unit Tests
+   1. By adding `codeCoverage` in tests inside _angular.json_
+
+          <!-- 1. set codeCoverage -->
+          "architect": {
+            "build": { },
+            "serve": { },
+            "extract-i18n": { },
+            "test": {
+              ...
+              "options": {
+                ...
+                "codeCoverage": true,
+                ...
+            },
+
+          <!-- 2. run test in cli -->
+          ng test
+
+   2. By adding in the CLI
+
+          ng test --codeCoverage
+
+A coverage folder would the generated `src/coverage`. Open the report in `index.html` file
