@@ -1231,3 +1231,18 @@ Helpfull for suppressing failing test case than fix it.
         xit
 
 `*` in the test report denotes skiped test suites.
+
+##### How to Run Specific Tests
+
+Angular has support for running specific tests
+
+Its very useful in debugging the failing tests
+
+Develop svaes time in just running the required tests and not all tests
+
+- For Unit Testa: By adding `f` in front of the tests
+  - `fdescribe`
+  - `fit`
+  - `fit`
+- For E2E Tests: By adding specific specs in the e2e spec definitions
+  - In _protractor.conf.js_ > mention which specs we need to run
