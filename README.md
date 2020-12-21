@@ -1106,7 +1106,7 @@ _client(UI)_ -> req -> _interceptor_ --> <-- res <- _server_
 
 read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors-in-angular-db450f8a62d6>
 
-#### Angular Testing
+### Angular Testing
 
 1. Introduction
 2. Running Unit Tests
@@ -1124,7 +1124,7 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 5. Run "specific" tests
 6. Generate code coverage report
 
-##### Testing Utilities provided by angular
+#### Testing Utilities provided by angular
 
 - Auto generate code
 - Angular natively supports unit tests using Jasmine and Karma
@@ -1163,14 +1163,14 @@ read more - <https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors
 - run automated regression tests for any web application
 - runs test using an actual browser
 
-##### Important Testing Concepts
+#### Important Testing Concepts
 
 **Test configuration**:
 
 1. Unit test config - karma - `./karma.conf.js` file
 2. E2E Test - Protractor - `./e2e/protractor.conf.js` file
 
-##### Run Unit Test In Angular
+#### Run Unit Test In Angular
 
 To run unit test
   
@@ -1185,7 +1185,7 @@ CLI commands
     --condfiguration=configuration
     --progress=true|false
 
-##### Run E2E Test In Angular
+#### Run E2E Test In Angular
 
 Angular uses Protractor for running the e2e tests
 
@@ -1201,7 +1201,7 @@ CLI commands
     --baseHref=foo.com
     --code-coverage 
 
-##### SKIP Tests
+#### SKIP Tests
 
 Ways to skip tests in Angular: For New applications, For Existing applications, For existing tests.
 
@@ -1232,7 +1232,7 @@ Helpfull for suppressing failing test case than fix it.
 
 `*` in the test report denotes skiped test suites.
 
-##### How to Run Specific Tests
+#### How to Run Specific Tests
 
 Angular has support for running specific tests
 
@@ -1247,7 +1247,7 @@ Develop svaes time in just running the required tests and not all tests
 - For E2E Tests: By adding specific specs in the e2e spec definitions
   - In _protractor.conf.js_ > mention which specs we need to run
 
-##### Generate Code Coverage Report
+#### Generate Code Coverage Report
 
 Angular has support for generating code coverage test reports
 
@@ -1281,3 +1281,17 @@ We can generate code coverage or both **Unit** and **E2E Tests**
           ng test --codeCoverage
 
 A coverage folder would the generated `src/coverage`. Open the report in `index.html` file
+
+### Build and Deploy Angular Apps
+
+1. Angular Build
+   1. Compile app
+   2. Transpile Typescript to JavaScript
+   3. Output `./dist`
+   4. We can build single/multiple apps in the same project
+2. Deployemnt (automated / manual)
+   1. Deploy `./dist` to server, hosting service or cloud platform
+   2. Automated deployments 
+      1. - Build Pipelines (CI/CD) - bitbucket, CircleCI.
+      2. Cloud Platform - AWS, Azure, GCP, AliCloud, DigitalOcean
+   3. Manual deployemnt - less preferred method
